@@ -2,7 +2,13 @@ div
 {
     font-family: 'Courier New', Courier, monospace;
 }
-.pizzaImage
+.itemsList {
+  left: 2%;
+ 
+  top: 10%;
+  
+}
+.pizzaImage , .PastaImage ,.BeefImage , .SaladImage
 {
     height: 400px;
 }
@@ -26,7 +32,7 @@ div
 }
 .active
 {
-    border: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     padding: 3px ;
 }
 
