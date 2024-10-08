@@ -48,39 +48,6 @@ export default function Register() {
   })
 
 
-  // Custom Validation 
-  /*
-  function validateForm(regData) {
-  
-      let errors = {};
-      if (regData.name == "") {
-        errors.name = "Name Is Required ";
-      }
-      else if (!/^[A-Z][a-z]{3,8}$/.test(regData.name)) {
-        errors.name = "Name Not Valid ";
-      }
-  
-      if (regData.email == "") {
-        errors.email = "Email Is Required ";
-      }
-      else if (!/^[A-Za-z]{5,15}[0-9]{3,9}@gmail\.com$/.test(regData.email)) {
-        errors.email = "Email Not Valid ";
-      }
-  
-      if (regData.phone == "") {
-        errors.phone = "Phone Is Required ";
-      }
-      else if (!/^01[0125][0-9]{8}$/.test(regData.phone)) {
-        errors.phone = "Phone Number Not Valid ";
-      }
-  
-  
-      return errors
-  
-    }
-  */
-
-
   // formik Library  step 1 
   let formik = useFormik({
 
