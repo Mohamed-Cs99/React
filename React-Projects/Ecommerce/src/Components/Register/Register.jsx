@@ -32,7 +32,7 @@ export default function Register() {
         if (res.data.message == "success") {
           setNewAccount("Account Created Successfully.");
           localStorage.setItem("userToken", res.data.token);
-          navigate("/");
+          // navigate("/login");
         }
 
       }
@@ -44,7 +44,7 @@ export default function Register() {
   // Validation Using "yup" library .
 
   let schema = Yup.object().shape({
-    name: Yup.string().min(3, "Minimum Length Is 3 Characters").max(10, "Maximun Length is 10 Characters").required("Name Is Required"),
+    name: Yup.string().min(3, "Minimum Length Is 3 Characters").max(20, "Maximun Length is 20 Characters").required("Name Is Required"),
     email: Yup.string().email("Invalid Email ").required("Email Is Required "),
     phone: Yup.string().matches(/^01[0125][0-9]{8}$/, "Phone Is Invalid ").required("Phone Is Required"),
     password: Yup.string().matches(/^[A-Za-z0-9]{6,10}$/, "Password Should Be From 6-10 Chars").required("Password Is Required"),
