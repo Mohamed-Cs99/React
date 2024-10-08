@@ -1,10 +1,12 @@
 import React from 'react'
 
+import hStyle from './home.module.css'
+
 export default function Home() {
     return (
         <>
 
-            <section className='home' >
+            <section className={`${hStyle.home} ${hStyle.homeFont}`} >
                 <div className="container-fluid  vh-100 d-flex justify-content-center align-items-center">
                     <div className="home-content bg-light text-center p-4  rounded ">
                         <h1 className=' font-weight-bolder'>Welcome Home </h1>

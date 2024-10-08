@@ -26,7 +26,7 @@ export default function Products() {
 
                     {Products.length > 0 ? Products.map((product) => (
                         <div className="col-md-3">
-                            <div className="item  bg-warning ">
+                            <div className="item">
                                 <img src={product.imageCover} className='w-100' alt="ProductIamge" />
                                 <h3 className='lead text-muted py-2 font-weight-bolder'>{product.title}</h3>
 
