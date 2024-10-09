@@ -34,7 +34,7 @@ export default function Register() {
           setNewAccount("Account Created Successfully.");
           localStorage.setItem("userToken", res.data.token);
           setuserLogin(res.data.token);
-          navigate("/");
+          navigate("/"); // go to home page. 
         }
 
       }

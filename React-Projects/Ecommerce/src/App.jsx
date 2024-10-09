@@ -13,17 +13,20 @@ import Register from './Components/Register/Register'
 import Login from './Components/Login/Login';
 
 import UserContextProvider from './Context/UserContext'
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
+import Notfound from './Components/Notfound/Notfound';
 
 let x = createBrowserRouter([
   {
     path: "", element: <Layout />, children: [
-      { index: true, element: <Home /> },
-      { path: "cart", element: <Cart /> },
-      { path: "products", element: <Products /> },
-      { path: "brands", element: <Brands /> },
-      { path: "categories", element: <Categories /> },
+      { index: true, element: <ProtectedRoute> <Home /></ProtectedRoute> },
+      { path: "cart", element: <ProtectedRoute><Cart /> </ProtectedRoute> },
+      { path: "products", element: <ProtectedRoute><Products /></ProtectedRoute> },
+      { path: "brands", element: <ProtectedRoute><Brands /></ProtectedRoute> },
+      { path: "categories", element: <ProtectedRoute> <Categories /></ProtectedRoute> },
       { path: "register", element: <Register /> },
-      { path: "login", element: <Login /> }
+      { path: "login", element: <Login /> },
+      { path: "*", element: <Notfound /> }
 
     ]
   }

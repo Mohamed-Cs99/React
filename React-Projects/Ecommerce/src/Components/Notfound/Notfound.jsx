@@ -5,7 +5,7 @@ export default function Notfound() {
   return (
     <>
     
-    <h1>Welcome Notfound </h1>
+    <h1> Notfound </h1>
     
     </>
   )
