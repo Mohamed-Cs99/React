@@ -30,10 +30,11 @@ export default function Register() {
       .then((res) => {
         setIsLoading(false);
         if (res.data.message == "success") {
+          setapiError("");
           setNewAccount("Account Created Successfully.");
           localStorage.setItem("userToken", res.data.token);
           setuserLogin(res.data.token);
-          // navigate("/login");
+          navigate("/");
         }
 
       }
