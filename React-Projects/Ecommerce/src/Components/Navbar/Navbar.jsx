@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import style from './Navbar.module.css'
 import logo from '../../../src/assets/logo.jpg'
-import { NavLink ,Link } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { UserContext } from '../../Context/UserContext'
+
+
+
+
 
 export default function Navbar() {
+  let navigate =useNavigate(); 
+  let { userLogin ,setuserLogin } = useContext(UserContext);
+
+  function signOut()
+  {
+    localStorage.removeItem("userToken"); 
+    setuserLogin(null) ; 
+    navigate("/login"); 
+  }
+
+
   return (
     <>
       <nav className=' fixed-top'>
@@ -16,8 +32,9 @@ export default function Navbar() {
                 {/* <span className='pl-2 font-weight-bolder text-black-50 '>Amazon Ramada</span> */}
               </div>
             </div>
+
             <div className="col-md-3  d-flex align-items-center">
-              <div className="components  d-flex justify-content-between  w-100 py-1">
+              {userLogin != null ? <div className="components  d-flex justify-content-between  w-100 py-1">
                 <div className="item">
                   <span><NavLink className=' text-decoration-none text-black-50 font-weight-bolder' to="">Home</NavLink></span>
                 </div>
@@ -33,7 +50,8 @@ export default function Navbar() {
                 <div className="item">
                   <span><NavLink className=' text-decoration-none text-black-50 font-weight-bolder' to="brands">Brands</NavLink></span>
                 </div>
-              </div>
+              </div> : null}
+
             </div>
 
             <div className=" offset-4 col-md-4 ">
@@ -48,16 +66,20 @@ export default function Navbar() {
                   </div>
                 </div>
                 <div className="col-md-5 d-flex align-items-center">
-                  <div className="navStatus d-flex  justify-content-between w-100">
-                    <div className="item">
-                      <span><Link className=' text-decoration-none text-black-50 font-weight-bolder' to="login">Login</Link></span>
-                    </div>
-                    <div className="item">
-                      <span><Link className=' text-decoration-none text-black-50 font-weight-bolder' to="register">SignUp</Link></span>
-                    </div>
-                    <div className="item">
-                      <span><Link className=' text-decoration-none text-black-50 font-weight-bolder' to="login">signOut</Link></span>
-                    </div>
+                  <div className="navStatus d-flex  justify-content-around w-100">
+
+                    {userLogin != null ? <div className="item">
+                      <span onClick={signOut} className='sout text-decoration-none text-black-50 font-weight-bolder'> SignOut</span>
+                    </div> : <>
+                      <div className="item">
+                        <span><Link className=' text-decoration-none text-black-50 font-weight-bolder pointer-event' to="login">Login</Link></span>
+                      </div>
+                      <div className="item">
+                        <span><Link className=' text-decoration-none text-black-50 font-weight-bolder pointer-event' to="register">SignUp</Link></span>
+                      </div>
+                    </>}
+
+
                   </div>
                 </div>
               </div>

@@ -12,6 +12,8 @@ import Brands from './Components/Brands/Brands'
 import Register from './Components/Register/Register'
 import Login from './Components/Login/Login';
 
+import UserContextProvider from './Context/UserContext'
+
 let x = createBrowserRouter([
   {
     path: "", element: <Layout />, children: [
@@ -32,7 +34,15 @@ let x = createBrowserRouter([
 function App() {
 
 
-  return <RouterProvider router={x}></RouterProvider>
+  return (
+    <>
+      <UserContextProvider>
+        <RouterProvider router={x}></RouterProvider>
+      </UserContextProvider>
+
+    </>
+  )
+
 }
 
 export default App

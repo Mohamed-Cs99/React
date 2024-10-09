@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import style from './Register.module.css'
 import { useFormik } from 'formik'
 import axios from 'axios';
-
 import { Link, useNavigate } from 'react-router-dom'
-
 import * as Yup from 'yup'
+import { UserContext } from '../../Context/UserContext';
+
 
 export default function Register() {
 
-
+  let { userLogin, setuserLogin } = useContext(UserContext);
   // Navigator Hook --> useNavigate ** Note: Should be at the top of the component . 
   const navigate = useNavigate();
 
@@ -32,6 +32,7 @@ export default function Register() {
         if (res.data.message == "success") {
           setNewAccount("Account Created Successfully.");
           localStorage.setItem("userToken", res.data.token);
+          setuserLogin(res.data.token);
           // navigate("/login");
         }
 
@@ -168,9 +169,9 @@ export default function Register() {
               </div> : null
             }
 
-            <button type="submit" className="btn btn-primary">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "Submit"}</button>
+            <button type="submit" className="btn btn-info">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "Sign Up"}</button>
 
-            <Link to="/login" className=' text-decoration-none'><div className='text-center'>Already have Account ? Login </div></Link>
+            <Link to="/login" className=' text-decoration-none'><div className='text-center'>Already Have An Account ? Login </div></Link>
 
             {/* Error Message Shown if there is api response error or success */}
             {apiError ? <div className="alert alert-danger py-2 mt-1" role="alert">

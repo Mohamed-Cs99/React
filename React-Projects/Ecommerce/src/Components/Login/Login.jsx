@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import style from './Login.module.css'
 import { useFormik } from 'formik'
 import axios from 'axios';
@@ -6,9 +6,13 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom'
 
 import * as Yup from 'yup'
+import { UserContext } from '../../Context/UserContext';
+
+
 
 export default function Register() {
-
+  
+  let { userLogin, setuserLogin } = useContext(UserContext);
 
   // Navigator Hook --> useNavigate ** Note: Should be at the top of the component . 
   const navigate = useNavigate();
@@ -31,6 +35,7 @@ export default function Register() {
         if (res.data.message == "success") {
          
           localStorage.setItem("userToken", res.data.token);
+          setuserLogin(res.data.token) ; 
           navigate("/");
         }
 
@@ -67,7 +72,7 @@ export default function Register() {
 
   return (
     <>
-      <section className=' py-5'>
+      <section className=' py-5 '>
 
         <div className="regForm w-25 m-auto  border rounded p-4">
 
@@ -99,7 +104,7 @@ export default function Register() {
             }
          
 
-            <button type="submit" className="btn btn-primary">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "Submit"}</button>
+            <button type="submit" className="btn btn-info">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "Log In"}</button>
 
             <Link to="/register" className=' text-decoration-none'><div className='text-center'>Don't have Account ? Register </div></Link>
 
