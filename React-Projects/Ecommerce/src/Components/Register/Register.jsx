@@ -98,7 +98,7 @@ export default function Register() {
       password: "",
       rePassword: ""
     },
-    // B3d m3ml el validation function bzod el attribute dh . 
+    // B3d m3ml el validation function bzwd el attribute dh . 
     validationSchema: schema
     ,
     onSubmit: handleRegistration // Method Call Api . 
