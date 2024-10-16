@@ -9,14 +9,13 @@ import { UserContext } from '../../Context/UserContext'
 
 
 export default function Navbar() {
-  let navigate =useNavigate(); 
-  let { userLogin ,setuserLogin } = useContext(UserContext);
+  let navigate = useNavigate();
+  let { userLogin, setuserLogin } = useContext(UserContext);
 
-  function signOut()
-  {
-    localStorage.removeItem("userToken"); 
-    setuserLogin(null) ; 
-    navigate("/login"); 
+  function signOut() {
+    localStorage.removeItem("userToken");
+    setuserLogin(null);
+    navigate("/login");
   }
 
 
@@ -26,10 +25,9 @@ export default function Navbar() {
 
         <div className="container-fluid bg-light py-2">
           <div className="row align-items-center">
-            <div className="col-md-1">
-              <div className="logo text-center">
-                <img src={logo} className='w-50 border rounded' alt="logoImage" />
-                {/* <span className='pl-2 font-weight-bolder text-black-50 '>Amazon Ramada</span> */}
+            <div className="col-md-2">
+              <div className="logo ">
+                <img src={logo} className='w-25 border rounded' alt="logoImage" /> <span className='font-weight-bolder ml-1'>Eshrak Egypt</span>
               </div>
             </div>
 
@@ -45,7 +43,7 @@ export default function Navbar() {
                   <span><NavLink className=' text-decoration-none text-black-50 font-weight-bolder' to="products">Products</NavLink></span>
                 </div>
                 <div className="item">
-                  <span><NavLink className=' text-decoration-none text-black-50 font-weight-bolder' to="categories">Categories</NavLink></span>
+                  <span><Link className=' text-decoration-none text-black-50 font-weight-bolder' >Categories</Link></span>
                 </div>
                 <div className="item">
                   <span><NavLink className=' text-decoration-none text-black-50 font-weight-bolder' to="brands">Brands</NavLink></span>
@@ -54,7 +52,7 @@ export default function Navbar() {
 
             </div>
 
-            <div className=" offset-4 col-md-4 ">
+            <div className=" offset-3 col-md-4 ">
               <div className="row ">
                 <div className="col-md-7 ">
                   <div className="icons  d-flex justify-content-between ">

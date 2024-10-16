@@ -170,6 +170,7 @@ export default function Register() {
               </div> : null
             }
 
+            {/* Loading ......... */}
             <button type="submit" className="btn btn-info">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "Sign Up"}</button>
 
             <Link to="/login" className=' text-decoration-none'><div className='text-center'>Already Have An Account ? Login </div></Link>
