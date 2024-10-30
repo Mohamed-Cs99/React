@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import style from './RecentProducts.module.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-
+import useProduct from '../../Hook/useProduct';
+import { CartContext } from '../../Context/CartContext';
+import toast from 'react-hot-toast';
 export default function RecentProducts() {
 
 
-  function getProducts() {
-    return axios.get(`https://ecommerce.routemisr.com/api/v1/products`);
+  let { data, error, isError, isLoading } = useProduct();
+  let { addProductToCart } = useContext(CartContext);
+
+  async function addToCart(prId) {
+    let response = await addProductToCart(prId);
+    if (response.data.status == 'success') {
+      toast.success(response.data.message);
+    }
+    else {
+      toast.error(response.data.message);
+    }
   }
-
-  let { data, isError, error, isLoading } = useQuery({
-    queryKey: ["recentProducts"],
-    queryFn: getProducts,
-    select: (data) => data.data.data
-
-  })
 
   if (isLoading) {
     return <div className="spinner">
@@ -69,7 +73,7 @@ export default function RecentProducts() {
                     </div>
                   </Link>
 
-                  <button className=' btn btn-outline-secondary  my-2'>Add To Cart</button>
+                  <button onClick={() => { addToCart(pr.id) }} className=' btn btn-outline-secondary  my-2'>Add To Cart</button>
                 </div>
               </div>
             ))}

@@ -22,7 +22,7 @@ export default function CategoriesSlider() {
     axios.get(`https://ecommerce.routemisr.com/api/v1/categories`)
       .then((res) => {
         setAllCategories(res.data.data);
-        console.log(AllCategories);
+       
       })
   }
 
