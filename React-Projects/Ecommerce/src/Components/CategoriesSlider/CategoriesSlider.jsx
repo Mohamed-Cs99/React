@@ -12,7 +12,7 @@ export default function CategoriesSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 3,
     autoplay:true,
     autoplaySpeed:2000
