@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import style from './Cart.module.css'
 import { CartContext } from '../../Context/CartContext'
 import toast from 'react-hot-toast';
-
+import emptyCart from '../../assets/EmptyCart.webp'
 export default function Cart() {
 
 
@@ -82,7 +82,7 @@ export default function Cart() {
             <button onClick={clearCart} className='btn btn btn-danger'>Clear Cart</button>
           </div>
 
-        </section> : <h1 className=' text-center py-5'>Cart Is Empty</h1>
+        </section> : <div className='emptyCary vh-100 d-flex justify-content-center align-items-center'><img src={emptyCart}></img></div> 
       }
 
 
