@@ -11,6 +11,7 @@ export default function useProduct() {
     queryKey: ["recentProducts"],
     queryFn: getProducts,
     select: (data) => data.data.data,
+    
   })
 
   return productInfo;

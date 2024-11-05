@@ -42,18 +42,18 @@ export default function Cart() {
     }
 
   }
+
+
   useEffect(() => {
-    getCartItems();
+    getCartItems(); 
   }, [])
 
   return (
     <>
       {
         CartDetails?.products.length > 0 ? <section id='cartSec'>
-          
-         
           <div className="py-5 container text-center">
-          <h1 className=' text-center bg-info text-white'>Total Price : {CartDetails.totalCartPrice} </h1>
+          <h1 className=' text-center bg-info text-white'>Total Price : ${CartDetails.totalCartPrice} </h1>
             <table className="table table-bordered ">
               <thead className='bg-dark text-white '>
                 <tr>

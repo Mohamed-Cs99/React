@@ -20,6 +20,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import CartContextProvider from './Context/CartContext'
 import { Toaster } from 'react-hot-toast';
+import BrandDetails from './Components/BrandDetails/BrandDetails';
 
 let query = new QueryClient();
 
@@ -32,6 +33,7 @@ let x = createBrowserRouter([
       { path: "brands", element: <ProtectedRoute><Brands /></ProtectedRoute> },
       { path: "categories/:category", element: <ProtectedRoute> <Categories /></ProtectedRoute> },
       { path: "productdetails/:id/:category", element: <ProtectedRoute> <ProductDetails /></ProtectedRoute> },
+      { path: "brandDetails/:id", element: <ProtectedRoute> <BrandDetails /></ProtectedRoute> },
       { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
       { path: "*", element: <Notfound /> }

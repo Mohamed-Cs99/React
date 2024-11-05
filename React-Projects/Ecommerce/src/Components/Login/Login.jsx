@@ -74,7 +74,7 @@ export default function Register() {
     <>
       <section className=' py-5 '>
 
-        <div className="regForm w-25 m-auto  border rounded p-4">
+        <div className="regForm  m-auto  border rounded p-4">
 
           <h1 className=' text-center'>Login now!</h1>
 
@@ -104,7 +104,7 @@ export default function Register() {
             }
          
 
-            <button type="submit" className="btn btn-info">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "Log In"}</button>
+            <button type="submit" className="btn btn-info">{IsLoading ? <i className=' fas fa-spinner fa-spin'></i> : "LogIn"}</button>
 
             <Link to="/register" className=' text-decoration-none'><div className='text-center'>Don't have Account ? Register </div></Link>
 

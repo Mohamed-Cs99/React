@@ -19,7 +19,7 @@ export default function CartContextProvider(props) {
                 headers
             }
         ).then((res) => res)
-            .catch((err) => err)
+         .catch((err) => err)
 
     }
 

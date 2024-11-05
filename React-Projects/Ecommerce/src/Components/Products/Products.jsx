@@ -19,7 +19,7 @@ export default function Products() {
       <section>
         <div className="container-fluid py-3">
           <div className="row">
-            {data.map((pr) => (
+            {data?.map((pr) => (
               <div key={pr.id} className="product col-md-3 my-2 text-center">
                 <div className="item rounded border bg-light">
                   <Link className=' text-decoration-none' to={`/productdetails/${pr.id}/${pr.category.name}`}>

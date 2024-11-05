@@ -110,7 +110,7 @@ export default function Register() {
     <>
       <section className=' py-5'>
 
-        <div className="regForm w-25 m-auto  border rounded p-4">
+        <div className="regForm  m-auto  border rounded p-4">
 
           <h1 className=' text-center'>Register now!</h1>
 
