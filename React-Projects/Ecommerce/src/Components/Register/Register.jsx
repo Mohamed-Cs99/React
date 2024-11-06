@@ -108,11 +108,11 @@ export default function Register() {
 
   return (
     <>
-      <section className=' py-5'>
+      <section className='py-5'>
 
-        <div className="regForm  m-auto  border rounded p-4">
+        <div className="regForm  m-auto  border rounded p-2">
 
-          <h1 className=' text-center'>Register now!</h1>
+          <h1 className=' text-center '>Register now!</h1>
 
           {/* Link formik with the form step2 */}
           <form className='border rounded p-2' onSubmit={formik.handleSubmit}>
