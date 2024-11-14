@@ -17,7 +17,7 @@ export default function Layout() {
     <div className="container-fluid pt-5">
       <Outlet/>
     </div>
-    {/* <Footer/> */}
+   
     </>
   )
 }
