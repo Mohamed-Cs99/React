@@ -5,12 +5,14 @@ import useAllPrdoucts from './../../Hooks/useAllPrdoucts';
 export default function Products() {
 
     let { data, isLoading } = useAllPrdoucts();
-
+    
     if (isLoading) {
         return <section className=' w-full h-screen  flex justify-center items-center'>
             <span class="loader"></span>
         </section>
     }
+
+
 
     return (
         <>
