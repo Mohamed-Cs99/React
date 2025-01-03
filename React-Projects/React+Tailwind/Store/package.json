@@ -21,9 +21,11 @@
     "generate-react-cli": "^8.4.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.5.1",
     "react-router-dom": "^6.28.0",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.13",
     "yup": "^1.4.0"
   },
   "devDependencies": {

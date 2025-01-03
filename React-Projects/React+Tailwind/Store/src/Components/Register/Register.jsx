@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import style from './Register.module.css'
 import { useFormik } from 'formik';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import axios from 'axios';
 import * as Yup from 'yup'
 
@@ -58,11 +58,11 @@ export default function Register() {
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 ">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                    <img
+                    {/* <img
                         alt="Your Company"
                         src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                         className="mx-auto h-10 w-auto"
-                    />
+                    /> */}
                     <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
                         Sign Up to your account
                     </h2>
@@ -81,7 +81,7 @@ export default function Register() {
                                     value={formik.values.name}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    type="name"
+                                    type="text"
                                     autoComplete="name"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                                 />
@@ -126,7 +126,7 @@ export default function Register() {
                                     value={formik.values.phone}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
-                                    type="phone"
+                                    type="text"
                                     autoComplete="phone"
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
                                 />
@@ -217,9 +217,9 @@ export default function Register() {
 
                     <p className="mt-10 text-center text-sm/6 text-gray-500 ">
                         Already Have Account ?
-                        <NavLink to="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        <Link to="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
                             Log In
-                        </NavLink>
+                        </Link>
                     </p>
                 </div>
             </div>

@@ -15,11 +15,14 @@ import Settings from './Components/Settings/Settings';
 import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import UserTokenProvider from './Context/UserToken'
-
 import Guard from './Components/Guard/Guard';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import CategoryProudcts from './Components/CategoryProudcts/CategoryProudcts';
+import CartContextProvider from './Context/CartContext'
+import { Toaster } from 'react-hot-toast';
+
+
 
 let query = new QueryClient();
 
@@ -48,11 +51,13 @@ function App() {
   return (
     <>
       <UserTokenProvider>
-        <QueryClientProvider client={query}>
-          <RouterProvider router={x}></RouterProvider>
-          <ReactQueryDevtools></ReactQueryDevtools>
-        </QueryClientProvider>
-
+        <CartContextProvider>
+          <QueryClientProvider client={query}>
+            <Toaster/> 
+            <RouterProvider router={x}></RouterProvider>
+            <ReactQueryDevtools></ReactQueryDevtools>
+          </QueryClientProvider>
+        </CartContextProvider>
       </UserTokenProvider>
 
     </>

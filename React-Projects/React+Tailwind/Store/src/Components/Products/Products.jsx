@@ -2,10 +2,11 @@ import React from 'react'
 import style from './Products.module.css'
 import axios, { Axios } from 'axios'
 import useAllPrdoucts from './../../Hooks/useAllPrdoucts';
+import Cartbtn from '../Cartbtn/Cartbtn';
 export default function Products() {
 
     let { data, isLoading } = useAllPrdoucts();
-    
+
     if (isLoading) {
         return <section className=' w-full h-screen  flex justify-center items-center'>
             <span class="loader"></span>
@@ -17,6 +18,8 @@ export default function Products() {
     return (
         <>
 
+
+            {/* Products Section --> Showing All Products  */}
             <section id='Products'>
                 <h1 className=' text-center font-serif font-extrabold py-5'>Our Products</h1>
                 <div className="row font-serif text-center font-semibold bg-slate-200 border">
@@ -35,13 +38,13 @@ export default function Products() {
 
                             </div>
 
+                            <Cartbtn product_id={product.id} />
+
+
                         </div>
                     )}
                 </div>
             </section>
-
-
-
 
         </>
     )
