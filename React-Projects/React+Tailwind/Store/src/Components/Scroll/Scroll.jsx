@@ -44,7 +44,7 @@ const ScrollToTopButton = () => {
           onClick={scrollToTop}
           className="bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300"
         >
-          Scroll to Top
+        <i className=' fas fa-2x fa-arrow-alt-circle-up '></i>
         </button>
       </div>
     )
