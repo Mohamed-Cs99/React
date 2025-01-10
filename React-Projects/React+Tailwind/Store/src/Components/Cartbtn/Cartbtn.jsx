@@ -4,18 +4,17 @@ import style from './Cartbtn.module.css'
 import { CartContext } from '../../Context/CartContext';
 import toast from 'react-hot-toast';
 export default function Cartbtn(props) {
+
   let proId = props.product_id;
 
   let { addProductToCart } = useContext(CartContext);
   async function addToCart(id) {
     let response = await addProductToCart(id);
-    if(response.data.status=='success')
-    {
+    if (response.data.status == 'success') {
       toast.success(response.data.message);
     }
-    else 
-    {
-     toast.error(response.data.message);
+    else {
+      toast.error(response.data.message);
     }
   }
   return (
@@ -25,7 +24,7 @@ export default function Cartbtn(props) {
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor" />
         </svg>
-        <span>Add To Cart</span>
+        <span>Add to Cart</span>
       </button>
     </StyledWrapper>
 

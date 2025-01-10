@@ -40,9 +40,16 @@ export default function CartContextProvider(props) {
             .catch((err) => err);
     }
 
+    function clearCartItems() {
+        return axios
+            .delete(`https://ecommerce.routemisr.com/api/v1/cart`, { headers })
+            .then((res) => res)
+            .catch((err) => err);
+    }
 
 
-    return <CartContext.Provider value={{ addProductToCart, getCartItems, updateCartQantity ,removeCartItem }}>
+
+    return <CartContext.Provider value={{ addProductToCart, getCartItems, updateCartQantity, removeCartItem,clearCartItems }}>
         {props.children}
     </CartContext.Provider>
 }

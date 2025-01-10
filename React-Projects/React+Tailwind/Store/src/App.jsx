@@ -21,6 +21,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import CategoryProudcts from './Components/CategoryProudcts/CategoryProudcts';
 import CartContextProvider from './Context/CartContext'
 import { Toaster } from 'react-hot-toast';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 
 
 
@@ -33,6 +34,7 @@ let x = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
       { path: "products", element: <Guard> <Products /></Guard> },
+      { path: "productdetails/:id/:category", element: <Guard> <ProductDetails/></Guard> },
       { path: "cart", element: <Guard><Cart /></Guard> },
       { path: "categories", element: <Guard><Categories /></Guard> },
       { path: "category/:name", element: <Guard><CategoryProudcts /></Guard> },
